@@ -1,6 +1,6 @@
 {
   "name": "coding-cli",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "`coding-cli` is a simple and powerful local coding assistant that lives on your terminal and can help you with improving your projects.",
   "bin": {
     "coding-cli": "./bin/run"
@@ -36,10 +36,10 @@
     "release": "semantic-release"
   },
   "keywords": [
-    "typescript",
-    "starter",
+    "coding",
+    "ai",
     "cli",
-    "bootstrap"
+    "assistant"
   ],
   "author": "Clelia Astra Bertelli <clelia@runllama.ai>",
   "license": "MIT",

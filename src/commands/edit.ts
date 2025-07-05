@@ -26,7 +26,7 @@ const JUDGING_SCHEMA = z.object({
   feedback: z.string(),
 })
 
-const LLM_JUDGE = new OpenAI({ model: 'gpt-4o' })
+const LLM_JUDGE = new OpenAI({ model: 'gpt-4.1-mini' })
 const LLM = new OpenAI({ model: 'gpt-4.1' })
 
 const startEvent = workflowEvent<{
