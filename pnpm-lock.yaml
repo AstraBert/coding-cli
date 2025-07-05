@@ -8,9 +8,6 @@ importers:
 
   .:
     dependencies:
-      '@llamaindex/anthropic':
-        specifier: ^0.3.15
-        version: 0.3.15(@llamaindex/core@0.6.13)(@llamaindex/env@0.1.30)
       '@llamaindex/openai':
         specifier: ^0.4.7
         version: 0.4.7(@llamaindex/core@0.6.13)(@llamaindex/env@0.1.30)(zod@3.25.74)
@@ -693,12 +690,6 @@ packages:
         optional: true
       zod:
         optional: true
-
-  '@llamaindex/anthropic@0.3.15':
-    resolution: {integrity: sha512-256p6lNmb0B6mE+b1YIsGwzAX85wzwKymxLG/6eTB65k7rWwiu4r9FvAE1N2aTkdRM/0Mh3GNJpSCVVxw5YTsA==}
-    peerDependencies:
-      '@llamaindex/core': 0.6.13
-      '@llamaindex/env': 0.1.30
 
   '@llamaindex/cloud@4.0.17':
     resolution: {integrity: sha512-HTk6pQOumb2IIh7gm9E0EoNW2RcW8ggq7xjwpm2h0nezvPW67teLnDQMqVmd+w/aLf2MH+uZ2mNlAV/XeSC+3g==}
@@ -4932,15 +4923,6 @@ snapshots:
     optionalDependencies:
       p-retry: 6.2.1
       zod: 3.25.74
-
-  '@llamaindex/anthropic@0.3.15(@llamaindex/core@0.6.13)(@llamaindex/env@0.1.30)':
-    dependencies:
-      '@anthropic-ai/sdk': 0.37.0
-      '@llamaindex/core': 0.6.13
-      '@llamaindex/env': 0.1.30
-      remeda: 2.24.0
-    transitivePeerDependencies:
-      - encoding
 
   '@llamaindex/cloud@4.0.17(@llama-flow/core@0.4.4(p-retry@6.2.1)(zod@3.25.74))(@llamaindex/core@0.6.13)(@llamaindex/env@0.1.30)':
     dependencies:
