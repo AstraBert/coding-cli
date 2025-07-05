@@ -8,8 +8,8 @@ config()
 const run = yargs(process.argv.slice(2))
 run.usage(
   bgBlue(
-    `Welcome to the CLI application powered by ${bold(red('cli-typescript-starter'))}!
-    See more on https://github.com/kucherenko/cli-typescript-starter`,
+    `Welcome to you coding assistant powered by ${bold(red('coding-cli'))}!
+    See more on https://github.com/AstraBert/coding-cli`,
   ),
 )
 for (const command of commands) {
