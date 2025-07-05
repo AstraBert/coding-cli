@@ -116,36 +116,33 @@ async function explainCode(
 
 export async function handler() {
   const codeLanguage = await logger.prompt(
-    'Hey there! I am your personal assistant specialized in explaining code files. Before we start, let me ask you a couple of questions: what programming language are you working with?',
-    {
-      type: 'text',
-    },
+    '👋 Hey there! I\'m your personal code assistant 🤖✨ What programming language are you working with?',
+    { type: 'text' }
   )
 
   const userLevel = await logger.prompt(
-    `Ok, I see: ${green(bold(codeLanguage))} is a great language! And what is your level?`,
+    `🎯 Awesome! ${green(bold(codeLanguage))} is fantastic! What's your skill level? 📊`,
     {
       type: 'select',
-      options: ['absolute beginner', 'beginner', 'intermediate', 'upper-intermediate', 'advanced', 'absolute mastery'],
-    },
+      options: ['🌱 absolute beginner', '🔰 beginner', '🚀 intermediate', '💪 upper-intermediate', '🏆 advanced', '🧙‍♂️ absolute mastery']
+    }
   )
 
-  const filePath = await logger.prompt('Ok, great! What file do you need to be explained?', {
-    type: 'text',
-  })
+  const filePath = await logger.prompt(
+    '📁 Perfect! Which file needs explaining? 🔍',
+    { type: 'text' }
+  )
 
   const userProblem = await logger.prompt(
-    `Perfect, but before diving deeper into explaining ${magenta(italic(filePath))}, can you tell me what seems to be the problem with it?`,
-    {
-      type: 'text',
-    },
+    `🤔 Before diving into ${magenta(italic(filePath))}, what specific issue are you facing? 🎯`,
+    { type: 'text' }
   )
 
   logger.log(gray('─'.repeat(50)))
-  logger.log(bold(cyan('Hang on, I will provide you with the explanation soon...')))
+  logger.log(bold(cyan('✨ Analyzing your code... This won\'t take long! 🔮')))
   logger.log('')
 
   const codeExplanation = await explainCode(codeLanguage, filePath, userLevel, userProblem)
-
+  
   parseAndRenderAnalysis(codeExplanation)
 }

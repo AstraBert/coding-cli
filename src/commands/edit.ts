@@ -191,32 +191,27 @@ async function runWorkflow(
 
 export async function handler() {
   const codeLanguage = await logger.prompt(
-    'Hey there! I am your personal assistant specialized in editing code files. Before we start, let me ask you a couple of questions: what programming language are you working with?',
-    {
-      type: 'text',
-    },
+    '👋 Hey there! I\'m your personal code editor 🛠️✨ What programming language are you working with?',
+    { type: 'text' }
   )
 
   const filePath = await logger.prompt(
-    `Ok, I see: ${green(bold(codeLanguage))} is a great language! What is the file you would like to edit?`,
-    {
-      type: 'text',
-    },
+    `🎯 Awesome! ${green(bold(codeLanguage))} is fantastic! Which file would you like to edit? 📝`,
+    { type: 'text' }
   )
 
-  const userFeature = await logger.prompt('Ok, great! And what is the change you would like to make?', {
-    type: 'text',
-  })
+  const userFeature = await logger.prompt(
+    '🚀 Perfect! What change would you like to make? ⚡',
+    { type: 'text' }
+  )
 
   const userImpDet = await logger.prompt(
-    `Perfect, but before proceeding with editing ${magenta(italic(filePath))}, can you tell me the implementation details you have in mind for the change?`,
-    {
-      type: 'text',
-    },
+    `🔧 Before editing ${magenta(italic(filePath))}, share your implementation details 💡`,
+    { type: 'text' }
   )
 
   logger.log(gray('─'.repeat(50)))
-  logger.log(bold(cyan('Hang on, the editing process will be starting shortly...')))
+  logger.log(bold(cyan('✨ Starting the editing process... Almost ready! 🎨')))
   logger.log('')
 
   await runWorkflow(filePath, userFeature, userImpDet, codeLanguage)
