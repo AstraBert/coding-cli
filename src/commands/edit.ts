@@ -191,23 +191,20 @@ async function runWorkflow(
 
 export async function handler() {
   const codeLanguage = await logger.prompt(
-    '👋 Hey there! I\'m your personal code editor 🛠️✨ What programming language are you working with?',
-    { type: 'text' }
+    "👋 Hey there! I'm your personal code editor 🛠️✨ What programming language are you working with?",
+    { type: 'text' },
   )
 
   const filePath = await logger.prompt(
     `🎯 Awesome! ${green(bold(codeLanguage))} is fantastic! Which file would you like to edit? 📝`,
-    { type: 'text' }
+    { type: 'text' },
   )
 
-  const userFeature = await logger.prompt(
-    '🚀 Perfect! What change would you like to make? ⚡',
-    { type: 'text' }
-  )
+  const userFeature = await logger.prompt('🚀 Perfect! What change would you like to make? ⚡', { type: 'text' })
 
   const userImpDet = await logger.prompt(
     `🔧 Before editing ${magenta(italic(filePath))}, share your implementation details 💡`,
-    { type: 'text' }
+    { type: 'text' },
   )
 
   logger.log(gray('─'.repeat(50)))

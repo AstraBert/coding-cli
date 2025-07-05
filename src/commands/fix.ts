@@ -211,27 +211,24 @@ async function runWorkflow(filePath: string, error: string, errorDetails: string
 
 export async function handler() {
   const codeLanguage = await logger.prompt(
-    '👋 Hey there! I\'m your personal code debugger 🐛🔧 What programming language are you working with?',
-    { type: 'text' }
+    "👋 Hey there! I'm your personal code debugger 🐛🔧 What programming language are you working with?",
+    { type: 'text' },
   )
 
   const filePath = await logger.prompt(
     `🎯 Awesome! ${green(bold(codeLanguage))} is fantastic! Which file needs fixing? 📁`,
-    { type: 'text' }
+    { type: 'text' },
   )
 
-  const userError = await logger.prompt(
-    '🚨 Perfect! What error are you encountering? ⚠️',
-    { type: 'text' }
-  )
+  const userError = await logger.prompt('🚨 Perfect! What error are you encountering? ⚠️', { type: 'text' })
 
   const userErrDet = await logger.prompt(
     `🔍 Before fixing ${magenta(italic(filePath))}, share more details about the error or problematic code 💡`,
-    { type: 'text' }
+    { type: 'text' },
   )
 
   logger.log(gray('─'.repeat(50)))
-  logger.log(bold(cyan('✨ Starting the debugging process... Let\'s squash those bugs! 🐛💥')))
+  logger.log(bold(cyan("✨ Starting the debugging process... Let's squash those bugs! 🐛💥")))
   logger.log('')
 
   await runWorkflow(filePath, userError, userErrDet, codeLanguage)

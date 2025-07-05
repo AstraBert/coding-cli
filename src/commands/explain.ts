@@ -116,33 +116,37 @@ async function explainCode(
 
 export async function handler() {
   const codeLanguage = await logger.prompt(
-    '👋 Hey there! I\'m your personal code assistant 🤖✨ What programming language are you working with?',
-    { type: 'text' }
+    "👋 Hey there! I'm your personal code assistant 🤖✨ What programming language are you working with?",
+    { type: 'text' },
   )
 
   const userLevel = await logger.prompt(
     `🎯 Awesome! ${green(bold(codeLanguage))} is fantastic! What's your skill level? 📊`,
     {
       type: 'select',
-      options: ['🌱 absolute beginner', '🔰 beginner', '🚀 intermediate', '💪 upper-intermediate', '🏆 advanced', '🧙‍♂️ absolute mastery']
-    }
+      options: [
+        '🌱 absolute beginner',
+        '🔰 beginner',
+        '🚀 intermediate',
+        '💪 upper-intermediate',
+        '🏆 advanced',
+        '🧙‍♂️ absolute mastery',
+      ],
+    },
   )
 
-  const filePath = await logger.prompt(
-    '📁 Perfect! Which file needs explaining? 🔍',
-    { type: 'text' }
-  )
+  const filePath = await logger.prompt('📁 Perfect! Which file needs explaining? 🔍', { type: 'text' })
 
   const userProblem = await logger.prompt(
     `🤔 Before diving into ${magenta(italic(filePath))}, what specific issue are you facing? 🎯`,
-    { type: 'text' }
+    { type: 'text' },
   )
 
   logger.log(gray('─'.repeat(50)))
-  logger.log(bold(cyan('✨ Analyzing your code... This won\'t take long! 🔮')))
+  logger.log(bold(cyan("✨ Analyzing your code... This won't take long! 🔮")))
   logger.log('')
 
   const codeExplanation = await explainCode(codeLanguage, filePath, userLevel, userProblem)
-  
+
   parseAndRenderAnalysis(codeExplanation)
 }
