@@ -106,7 +106,7 @@ async function explainCode(
       },
       {
         role: 'user',
-        content: `I am at a ${level} level in ${codeLanguage} and I am struggling to understant this file: ${filePath} because I have the following problem: ${problem}. This is the content of the file you should explain to me:\n\n'''\n${fileContent}\n'''\n\n. Please explain it to me.`,
+        content: `I am at a ${level} level in ${codeLanguage} and I am struggling to understant this file: ${filePath} because I have the following problem: ${problem}. This is the content of the file you should explain to me:\n\n'''\n${fileContent}\n'''\n\n.`,
       },
     ],
     responseFormat: SCHEMA,

@@ -1,6 +1,6 @@
 {
   "name": "coding-cli",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "`coding-cli` is a simple and powerful local coding assistant that lives on your terminal and can help you with improving your projects.",
   "bin": {
     "coding-cli": "./bin/run"
