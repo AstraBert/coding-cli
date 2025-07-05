@@ -34,7 +34,7 @@ async function writeTextFile(filePath: string, content: string): Promise<string>
   }
 }
 
-const LLM_JUDGE = new OpenAI({ model: 'gpt-4o' })
+const LLM_JUDGE = new OpenAI({ model: 'gpt-4.1-mini' })
 const LLM = new OpenAI({ model: 'gpt-4.1' })
 
 const ERROR_SCHEMA = z.object({
